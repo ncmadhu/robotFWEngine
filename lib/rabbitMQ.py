@@ -3,6 +3,7 @@
 
 import pika
 import logging
+import taskExecutor
 
 #Initialize logger
 logger = logging.getLogger('appLogger')
@@ -19,7 +20,7 @@ class RabbitMQ(object):
         self.user = user
         self.password = password
         self.credentials = pika.PlainCredentials(self.user, self.password)
-        self.connection = None
+        self.taskExecutor = taskExecutor.TaskExecutor() 
         logger.debug("Initialized RabbitMQ")
 
 
@@ -51,6 +52,14 @@ class RabbitMQ(object):
         logger.debug("Declared queue: " + queueName)
         return channel
 
+    def receiveCallback(self, ch, method, properties, body):
+
+        logger.debug("Received message: " + body)
+        logger.debug("Routing Key: " + method.routing_key)
+        self.taskExecutor.executeTask(method.routing_key, body)
+        ch.basic_ack(delivery_tag = method.delivery_tag)
+
+
     def receive(self, exchange, queueName, receiveRoutingKeys):
 
         channel = self.exchangeDeclare(exchange)
@@ -64,13 +73,6 @@ class RabbitMQ(object):
         channel.basic_consume(self.receiveCallback, queue=queueName)
         logger.info("Waiting for task in queue: " + queueName)
         channel.start_consuming()
-
-
-    def receiveCallback(self, ch, method, properties, body):
-
-        logger.info("Received message: " + body)
-        logger.info("Routing Key: " + method.routing_key)
-        ch.basic_ack(delivery_tag = method.delivery_tag)
 
 
     def send(self, exchange='', routingKey='status', message=None):
@@ -88,13 +90,19 @@ class RabbitMQ(object):
        
 
 if __name__ == "__main__":
+
     logger.info("Testing Send start")
-    routingKeys = ['start', 'stop', 'status', 'addHost']
+    routingKeys = [['start', 'testBody'],
+                   ['stop', 'testBody'],
+                   ['status', 'testBody'],
+                   ['addHost', '{"host":"10.0.0.4",\
+                                "username": "madhu",\
+                                "password": "calsoftlabs"}']]
     rabbit = RabbitMQ('localhost', 5672, 'oneview', 'oneview')
     rabbit.connect()
-    for key in routingKeys:
-        message = "Sending message " + key
-        rabbit.send('robot', key, message)
+    for keyValue in routingKeys:
+        message = keyValue[1]
+        rabbit.send('robot', keyValue[0], message)
     rabbit.close()
     logger.info("Testing Send end")
 
