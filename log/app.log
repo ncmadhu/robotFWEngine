@@ -1,0 +1,120 @@
+'13/04/2017 04:13:12 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 04:13:12 PM' - appLogger - DEBUG - Closed connection to the host: localhost
+'13/04/2017 04:15:01 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 04:15:01 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 04:15:01 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 04:15:01 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 04:15:29 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 04:15:29 PM' - appLogger - INFO - <type 'str'>
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 04:15:29 PM' - appLogger - DEBUG - Closed connection to the host: localhost
+'13/04/2017 04:26:19 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 04:26:19 PM' - appLogger - INFO - <type 'list'>
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 04:26:19 PM' - appLogger - DEBUG - Closed connection to the host: localhost
+'13/04/2017 04:26:41 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 04:26:41 PM' - appLogger - INFO - ['start', 'stop', 'status', 'addHost']
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 04:26:41 PM' - appLogger - DEBUG - Closed connection to the host: localhost
+'13/04/2017 04:26:49 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 04:26:49 PM' - appLogger - INFO - ['start', 'stop', 'status', 'addHost']
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 04:26:49 PM' - appLogger - DEBUG - Closed connection to the host: localhost
+'13/04/2017 05:00:51 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 05:00:51 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 05:00:51 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 05:00:51 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 05:00:51 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 05:01:51 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Declared Exchange: robot
+'13/04/2017 05:01:51 PM' - appLogger - DEBUG - Declared queue: task
+'13/04/2017 05:02:22 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Declared Exchange: robot
+'13/04/2017 05:02:22 PM' - appLogger - DEBUG - Declared queue: task
+'13/04/2017 05:03:14 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Declared Exchange: robot
+'13/04/2017 05:03:14 PM' - appLogger - DEBUG - Declared queue: task
+'13/04/2017 05:03:40 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Declared Exchange: robot
+'13/04/2017 05:03:40 PM' - appLogger - DEBUG - Declared queue: task
+'13/04/2017 05:03:40 PM' - appLogger - INFO - Waiting for task in queue: task
+'13/04/2017 05:04:30 PM' - appLogger - INFO - Received message: Sending message start
+'13/04/2017 05:04:30 PM' - appLogger - INFO - Routing Key: start
+'13/04/2017 05:20:22 PM' - appLogger - INFO - Info Starting App
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Loading configuration
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Config Sections: ['RabbitMQ', 'Framework', 'Executor']
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Initializing rabbitMQ config
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Connecting to rabbitMQ
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Initializing RabbitMQ
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Initialized RabbitMQ
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Establishing connection to the host: localhost
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Declared Exchange: robot
+'13/04/2017 05:20:22 PM' - appLogger - DEBUG - Declared queue: task
+'13/04/2017 05:20:22 PM' - appLogger - INFO - Waiting for task in queue: task
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Received message: Sending message start
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Routing Key: start
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Received message: Sending message stop
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Routing Key: stop
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Received message: Sending message status
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Routing Key: status
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Received message: Sending message addHost
+'13/04/2017 05:20:26 PM' - appLogger - INFO - Routing Key: addHost
