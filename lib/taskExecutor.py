@@ -5,6 +5,7 @@ import os
 import json 
 import logging
 import sshConnector
+import reportParser
 from datetime import datetime
 
 #Initialize logger
@@ -38,6 +39,10 @@ class TaskExecutor(object):
 
             if self.transport == 'ssh':
                 self.startTaskInSSH(host, cmd, sourceDir, destDir)
+            parser = reportParser.ReportParser(os.path.join(destDir, 'output.xml'))
+            data = parser.convertXmlToJson()
+            parser.writeJsonToFile(data)
+
 
     def startTaskInSSH(self, host, cmd, sourceDir, destDir):
 
