@@ -92,7 +92,8 @@ class RabbitMQ(object):
 if __name__ == "__main__":
 
     logger.info("Testing Send start")
-    routingKeys = [['start', 'testBody'],
+    routingKeys = [['start', '{"host": "10.0.0.3",\
+                               "command": "pybot /home/madhu/robot/demo.robot"}'],
                    ['stop', 'testBody'],
                    ['status', 'testBody'],
                    ['addHost', '{"host":"10.0.0.4",\

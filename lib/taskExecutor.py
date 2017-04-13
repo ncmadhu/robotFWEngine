@@ -4,6 +4,7 @@
 import os
 import json 
 import logging
+import sshConnector
 
 #Initialize logger
 logger = logging.getLogger('appLogger')
@@ -22,6 +23,14 @@ class TaskExecutor(object):
     def taskStart(self,body):
 
         logger.info("Executing start")
+        if body:
+            data = json.loads(body)
+            host = data['host']
+            sshConn = sshConnector.SSHConnector(host)
+            sshConn.connectToHost()
+            sshConn.executeCommandInHost(data['command'])
+            sshConn.closeConnectionToHost()
+
 
     def taskStop(self,body):
 
