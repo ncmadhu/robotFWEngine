@@ -25,7 +25,6 @@ class SSHConnector(object):
             data = json.load(jsonFile)
         return data
 
-
     def connectToHost(self):
 
         logger.debug("Connecting to " + self.loginDetails['host'])
@@ -34,7 +33,6 @@ class SSHConnector(object):
         self.connection.connect(self.loginDetails['host'],
                                 username=self.loginDetails['username'],
                                 password=self.loginDetails['password'])
-
 
     def executeCommandInHost(self, command):
 
@@ -47,6 +45,12 @@ class SSHConnector(object):
         else:
             logger.debug("Empty command given")
 
+    def copyReportsFromHost(self, source, destination):
+
+        if self.connection:
+            logger.debug("Copying file to " + destination)
+            sftp = self.connection.open_sftp()
+            sftp.get(source, destination)
 
     def closeConnectionToHost(self):
 
@@ -54,7 +58,6 @@ class SSHConnector(object):
             logger.debug("Closing connection to host " + 
                           self.loginDetails['host'])
             self.connection.close()
-
 
 if __name__ == "__main__":
 
@@ -65,7 +68,10 @@ if __name__ == "__main__":
     logger = logging.getLogger('appLogger')
     logger.info("Started testing SSHConnector")
     
-    sshConn = SSHConnector('10.0.0.3')
+    #sshConn = SSHConnector('10.0.0.3')
+    sshConn = SSHConnector('192.168.2.9')
     sshConn.connectToHost()
     sshConn.executeCommandInHost('pybot /home/madhu/robot/demo.robot')
+    sshConn.copyReportsFromHost('/home/madhu/robot/output.xml', '../reports/output.xml')
+    sshConn.copyReportsFromHost('/home/madhu/robot/log.html', '../reports/log.html')
     sshConn.closeConnectionToHost()

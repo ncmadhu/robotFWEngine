@@ -23,7 +23,6 @@ class RabbitMQ(object):
         self.taskExecutor = taskExecutor.TaskExecutor() 
         logger.debug("Initialized RabbitMQ")
 
-
     def connect(self):
    
         logger.debug("Establishing connection to the host: " + self.host)
@@ -44,8 +43,6 @@ class RabbitMQ(object):
         logger.debug("Declared Exchange: " + exchange)
         return channel
 
-
-
     def queueDeclare(self, channel, queueName):
 
         channel.queue_declare(queue=queueName, durable=True, auto_delete=True)
@@ -58,7 +55,6 @@ class RabbitMQ(object):
         logger.debug("Routing Key: " + method.routing_key)
         self.taskExecutor.executeTask(method.routing_key, body)
         ch.basic_ack(delivery_tag = method.delivery_tag)
-
 
     def receive(self, exchange, queueName, receiveRoutingKeys):
 
@@ -74,7 +70,6 @@ class RabbitMQ(object):
         logger.info("Waiting for task in queue: " + queueName)
         channel.start_consuming()
 
-
     def send(self, exchange='', routingKey='status', message=None):
 
         if message:
@@ -87,13 +82,11 @@ class RabbitMQ(object):
                                   ))
             logger.info("Published Message to the: " + routingKey)
 
-       
-
 if __name__ == "__main__":
 
     logger.info("Testing Send start")
-    routingKeys = [['start', '{"host": "10.0.0.3",\
-                               "command": "pybot /home/madhu/robot/demo.robot"}'],
+    routingKeys = [['start', '{"host": "192.168.2.9",\
+                               "test-suite": "/home/madhu/robot/demo.robot"}'],
                    ['stop', 'testBody'],
                    ['status', 'testBody'],
                    ['addHost', '{"host":"10.0.0.4",\
@@ -106,5 +99,3 @@ if __name__ == "__main__":
         rabbit.send('robot', keyValue[0], message)
     rabbit.close()
     logger.info("Testing Send end")
-
-

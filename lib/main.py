@@ -7,12 +7,10 @@ import ConfigParser
 import logging
 import logging.config
 
-
 #Initialize logger
 
 logging.config.fileConfig(os.path.join(os.getcwd(),'..', 'config', 'logging.conf'))
 logger = logging.getLogger('appLogger')
-
 
 class AppMain(object):
     
@@ -51,11 +49,6 @@ class AppMain(object):
                                  self.rabbitMQPassword)
         return self.rabbitMQ
 
-
-
-
-
-
 if __name__ == "__main__":
 
     app = AppMain()
@@ -63,8 +56,3 @@ if __name__ == "__main__":
     appRabbitMQ.connect()
     appRabbitMQ.receive('robot', 'task', app.rabbitMQReceiveRoutingKeys)
     appRabbitMQ.close()
-
-
-
-
-
