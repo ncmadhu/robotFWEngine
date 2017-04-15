@@ -6,6 +6,7 @@ import json
 import logging
 import sshConnector
 import reportParser
+import ConfigParser
 from datetime import datetime
 
 #Initialize logger
@@ -22,8 +23,11 @@ class TaskExecutor(object):
                       "status": self.taskStatus,
                       "addHost": self.taskAddHost}
 
-        self.reportFiles = ['output.xml', 'log.html', 'report.html']
-        self.transport = 'ssh'
+        self.config = self.loadConfig()
+        self.initMongoDbConfig()
+        reportFiles = self.config.get('ReportFiles', 'files')
+        self.reportFiles = reportFiles.split(',') 
+        self.transport = self.config.get('Executor', 'transport')
 
     def taskStart(self,body):
 
@@ -39,8 +43,14 @@ class TaskExecutor(object):
 
             if self.transport == 'ssh':
                 self.startTaskInSSH(host, cmd, sourceDir, destDir)
-            parser = reportParser.ReportParser(os.path.join(destDir, 'output.xml'))
+            parser = reportParser.ReportParser(os.path.join(destDir,
+                                               'output.xml'),
+                                               uniqueId,
+                                               self.mongoHost,
+                                               self.mongoPort,
+                                               self.mongoDb)
             data = parser.convertXmlToJson()
+            parser.parseJsonData(data)
             parser.writeJsonToFile(data)
 
 
@@ -105,6 +115,23 @@ class TaskExecutor(object):
                             minute=time.minute,
                             second=time.second)
         return uniqueId
+
+
+    def loadConfig(self):
+
+        logger.debug("Loading configuration")
+        config = ConfigParser.ConfigParser()
+        config.read(os.path.join(os.getcwd(), '..', 'config', 'config.ini'))
+        logger.debug("Config Sections: " + str(config.sections()))
+        return config
+
+    def initMongoDbConfig(self):
+
+        logger.debug("Initializing MongoDb config")
+        self.mongoHost = self.config.get('MongoDB', 'host')
+        self.mongoPort = self.config.get('MongoDB', 'port')
+        self.mongoDb = self.config.get('MongoDB', 'database')
+
 
 
 if __name__ == "__main__":

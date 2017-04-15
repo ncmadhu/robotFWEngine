@@ -13,11 +13,12 @@ logger = logging.getLogger('appLogger')
 
 class MongoDbClient(object):
 
-    def __init__(self, host, port):
+    def __init__(self, host, port, dataBase):
 
         logger.debug("Init Mongo connection")
         self.host = host
         self.port = port
+        self.dataBase = dataBase 
         self.client = None
 
     def connect(self):
@@ -31,10 +32,10 @@ class MongoDbClient(object):
         if self.client:
             self.client.close()
 
-    def getCollection(self, database, collection):
+    def getCollection(self, collection):
 
-        logger.debug("Getting collection " + collection + " from " + database)
-        db =  self.client[database]
+        logger.debug("Getting collection " + collection + " from " + self.dataBase)
+        db =  self.client[self.dataBase]
         return db[collection]
 
 
@@ -146,9 +147,9 @@ if __name__ == "__main__":
     }
 
 
-    mongoDbClient = MongoDbClient('localhost', 27017)
+    mongoDbClient = MongoDbClient('localhost', 27017, 'test')
     mongoDbClient.connect()
-    collection = mongoDbClient.getCollection('test', 'suite')
+    collection = mongoDbClient.getCollection('suite')
     mongoDbClient.dropIndexes(collection)
     indexes = mongoDbClient.createIndexModels([("name", ASCENDING),
                                      ("latest-summary.status", ASCENDING)])
