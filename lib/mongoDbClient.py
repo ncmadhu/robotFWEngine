@@ -107,6 +107,21 @@ class MongoDbClient(object):
                 self.writeDocument(collection, data)
 
 
+    def addFrameworkData(self, collection, data):
+
+        if data:
+            logger.debug("Adding data to mongoDb")
+            document = self.getDocument(collection, {"name": data["name"]})
+            if document:
+                logger.debug("Updating data to mongoDb")
+                self.updateDocument(collection, {"name": data["name"]},
+                                    {"latest-summary": data["latest-summary"]})
+                self.updateDocument(collection, {"name": data["name"]},
+                                    {"suite-name": data["suite-name"]})
+            else:
+                logger.debug("Adding new data to mongoDb")
+                self.writeDocument(collection, data)
+
 
 
 if __name__ == "__main__":

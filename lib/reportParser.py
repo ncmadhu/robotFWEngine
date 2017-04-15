@@ -36,6 +36,7 @@ class ReportParser(object):
         suiteData =  data['robot']['suite']
         suiteData = self.parseSuiteData(data['robot']['suite'])
         self.addDataToDatabase()
+        self.addDataToFrameworkDb()
 
     def parseSuiteData(self, suiteData):
 
@@ -125,6 +126,22 @@ class ReportParser(object):
             collection = mongoClient.getCollection(key)
             for data in self.dbData[key]:
                 mongoClient.addData(collection, data)
+        mongoClient.close()
+
+
+    def addDataToFrameworkDb(self):
+
+        logger.debug("Adding Framework data to database")
+        mongoClient = mongoDbClient.MongoDbClient(self.mongoHost,
+                                                  self.mongoPort,
+                                                  'frameworks')
+        mongoClient.connect()
+        data = {}
+        data['name'] = 'Robot'
+        data['suite-name'] = self.dbData['suites'][0]['name']
+        data['latest-summary'] = self.dbData['suites'][0]['latest-summary']
+        collection = mongoClient.getCollection('results')
+        mongoClient.addFrameworkData(collection, data)
         mongoClient.close()
 
 
